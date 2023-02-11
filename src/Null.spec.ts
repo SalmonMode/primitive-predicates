@@ -37,9 +37,11 @@ describe("Null", function (): void {
           expect(() => assertIsNull([])).to.throw(NullAssertionError);
         });
       });
-      describe("Undefined", function (): void {
+      describe("BigInt", function (): void {
         it("should throw NullAssertionError", function (): void {
-          expect(() => assertIsNull(undefined)).to.throw(NullAssertionError);
+          expect(() => assertIsNull(BigInt("782345729472934947927"))).to.throw(
+            NullAssertionError
+          );
         });
       });
     });
@@ -81,6 +83,11 @@ describe("Null", function (): void {
       describe("Undefined", function () {
         it("should be false", function () {
           expect(isNull(undefined)).to.be.false;
+        });
+      });
+      describe("BigInt", function () {
+        it("should be false", function () {
+          expect(isNull(BigInt("237849723942492342"))).to.be.false;
         });
       });
     });

@@ -44,6 +44,13 @@ describe("String", function (): void {
           );
         });
       });
+      describe("BigInt", function (): void {
+        it("should throw StringAssertionError", function (): void {
+          expect(() => assertIsString(BigInt("237854927932894729"))).to.throw(
+            StringAssertionError
+          );
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -83,6 +90,11 @@ describe("String", function (): void {
       describe("Undefined", function () {
         it("should be false", function () {
           expect(isString(undefined)).to.be.false;
+        });
+      });
+      describe("BigInt", function () {
+        it("should be false", function () {
+          expect(isString(BigInt("238947324732947234792"))).to.be.false;
         });
       });
     });

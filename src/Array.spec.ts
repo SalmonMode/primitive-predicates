@@ -54,6 +54,13 @@ describe("Array", function () {
           expect(() => assertIsArray(undefined)).to.throw(ArrayAssertionError);
         });
       });
+      describe("BigInt", function () {
+        it("should throw ArrayAssertionError", function () {
+          expect(() => assertIsArray(BigInt("34237849237488234"))).to.throw(
+            ArrayAssertionError
+          );
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -103,6 +110,11 @@ describe("Array", function () {
       describe("Undefined", function () {
         it("should be false", function () {
           expect(isArray(undefined)).to.be.false;
+        });
+      });
+      describe("BigInt", function () {
+        it("should be false", function () {
+          expect(isArray(BigInt("2348978920347239572"))).to.be.false;
         });
       });
     });

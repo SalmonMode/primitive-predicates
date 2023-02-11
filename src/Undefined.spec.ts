@@ -48,6 +48,13 @@ describe("Undefined", function (): void {
           );
         });
       });
+      describe("BigInt", function (): void {
+        it("should throw UndefinedAssertionError", function (): void {
+          expect(() =>
+            assertIsUndefined(BigInt("237847294723894237489"))
+          ).to.throw(UndefinedAssertionError);
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -87,6 +94,11 @@ describe("Undefined", function (): void {
       describe("Null", function () {
         it("should be false", function () {
           expect(isUndefined(null)).to.be.false;
+        });
+      });
+      describe("BigInt", function () {
+        it("should be false", function () {
+          expect(isUndefined(BigInt("237482749378472947932"))).to.be.false;
         });
       });
     });

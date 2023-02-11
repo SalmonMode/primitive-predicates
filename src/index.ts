@@ -9,6 +9,7 @@ export {
   ObjectAssertionError,
   StringAssertionError,
   UndefinedAssertionError,
+  BigIntAssertionError,
 } from "./Errors";
 export { assertIsNull, isNull } from "./Null";
 export { assertIsNumber, isNumber } from "./Number";

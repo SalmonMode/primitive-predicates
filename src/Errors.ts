@@ -88,3 +88,14 @@ export class UndefinedAssertionError extends AssertionError {
     this.name = new.target.name;
   }
 }
+/**
+ * Thrown when a value is found to not be a BigInt.
+ */
+export class BigIntAssertionError extends AssertionError {
+  constructor(message?: string) {
+    super(message);
+
+    Object.setPrototypeOf(this, BigIntAssertionError.prototype);
+    this.name = new.target.name;
+  }
+}

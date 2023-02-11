@@ -49,6 +49,13 @@ describe("Boolean", function (): void {
           );
         });
       });
+      describe("BigInt", function (): void {
+        it("should throw BooleanAssertionError", function (): void {
+          expect(() =>
+            assertIsBoolean(BigInt("2347824737274923794279"))
+          ).to.throw(BooleanAssertionError);
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -93,6 +100,11 @@ describe("Boolean", function (): void {
       describe("Undefined", function () {
         it("should be false", function () {
           expect(isBoolean(undefined)).to.be.false;
+        });
+      });
+      describe("BigInt", function () {
+        it("should be false", function () {
+          expect(isBoolean(BigInt("236784592678423899798"))).to.be.false;
         });
       });
     });

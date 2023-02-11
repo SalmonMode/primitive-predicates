@@ -56,6 +56,13 @@ describe("Object", function () {
           );
         });
       });
+      describe("BigInt", function () {
+        it("should throw ObjectAssertionError", function () {
+          expect(() =>
+            assertIsObject(BigInt("283457927428349273947"))
+          ).to.throw(ObjectAssertionError);
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -105,6 +112,11 @@ describe("Object", function () {
       describe("Undefined", function () {
         it("should be false", function () {
           expect(isObject(undefined)).to.be.false;
+        });
+      });
+      describe("BigInt", function () {
+        it("should be false", function () {
+          expect(isObject(BigInt("23874923749237942739782"))).to.be.false;
         });
       });
     });
