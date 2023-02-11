@@ -99,3 +99,14 @@ export class BigIntAssertionError extends AssertionError {
     this.name = new.target.name;
   }
 }
+/**
+ * Thrown when a value is found to not be a Symbol.
+ */
+export class SymbolAssertionError extends AssertionError {
+  constructor(message?: string) {
+    super(message);
+
+    Object.setPrototypeOf(this, SymbolAssertionError.prototype);
+    this.name = new.target.name;
+  }
+}

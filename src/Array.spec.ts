@@ -61,6 +61,13 @@ describe("Array", function () {
           );
         });
       });
+      describe("Symbol", function () {
+        it("should throw ArrayAssertionError", function () {
+          expect(() => assertIsArray(Symbol("foo"))).to.throw(
+            ArrayAssertionError
+          );
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -115,6 +122,11 @@ describe("Array", function () {
       describe("BigInt", function () {
         it("should be false", function () {
           expect(isArray(BigInt("2348978920347239572"))).to.be.false;
+        });
+      });
+      describe("Symbol", function () {
+        it("should be false", function () {
+          expect(isArray(Symbol("foo"))).to.be.false;
         });
       });
     });

@@ -42,6 +42,8 @@ npm install primitive-predicates
 - `isUndefined`
 - `assertIsBigInt`
 - `isBigInt`
+- `assertIsSymbol`
+- `isSymbol`
 
 ## Basic usage
 
@@ -80,6 +82,7 @@ These are the available error types, grouped according to their inheritance:
   - `NullAssertionError`
   - `UndefinedAssertionError`
   - `BigIntAssertionError`
+  - `SymbolAssertionError`
 
 ### Predicates
 

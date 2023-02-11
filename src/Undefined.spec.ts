@@ -55,6 +55,13 @@ describe("Undefined", function (): void {
           ).to.throw(UndefinedAssertionError);
         });
       });
+      describe("Symbol", function (): void {
+        it("should throw UndefinedAssertionError", function (): void {
+          expect(() => assertIsUndefined(Symbol("foo"))).to.throw(
+            UndefinedAssertionError
+          );
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -99,6 +106,11 @@ describe("Undefined", function (): void {
       describe("BigInt", function () {
         it("should be false", function () {
           expect(isUndefined(BigInt("237482749378472947932"))).to.be.false;
+        });
+      });
+      describe("Symbol", function () {
+        it("should be false", function () {
+          expect(isUndefined(Symbol("foo"))).to.be.false;
         });
       });
     });

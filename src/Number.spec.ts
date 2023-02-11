@@ -61,6 +61,13 @@ describe("Number", function (): void {
           ).to.throw(NumberAssertionError);
         });
       });
+      describe("Symbol", function (): void {
+        it("should throw NumberAssertionError", function (): void {
+          expect(() => assertIsNumber(Symbol("foo"))).to.throw(
+            NumberAssertionError
+          );
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -115,6 +122,11 @@ describe("Number", function (): void {
       describe("BigInt", function () {
         it("should be false", function () {
           expect(isNumber(BigInt("2342342389472794"))).to.be.false;
+        });
+      });
+      describe("Symbol", function () {
+        it("should be false", function () {
+          expect(isNumber(Symbol("foo"))).to.be.false;
         });
       });
     });

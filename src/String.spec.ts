@@ -51,6 +51,13 @@ describe("String", function (): void {
           );
         });
       });
+      describe("Symbol", function (): void {
+        it("should throw StringAssertionError", function (): void {
+          expect(() => assertIsString(Symbol("foo"))).to.throw(
+            StringAssertionError
+          );
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -95,6 +102,11 @@ describe("String", function (): void {
       describe("BigInt", function () {
         it("should be false", function () {
           expect(isString(BigInt("238947324732947234792"))).to.be.false;
+        });
+      });
+      describe("Symbol", function () {
+        it("should be false", function () {
+          expect(isString(Symbol("foo"))).to.be.false;
         });
       });
     });

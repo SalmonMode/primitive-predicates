@@ -44,6 +44,13 @@ describe("Null", function (): void {
           );
         });
       });
+      describe("Symbol", function (): void {
+        it("should throw NullAssertionError", function (): void {
+          expect(() => assertIsNull(Symbol("foo"))).to.throw(
+            NullAssertionError
+          );
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -88,6 +95,11 @@ describe("Null", function (): void {
       describe("BigInt", function () {
         it("should be false", function () {
           expect(isNull(BigInt("237849723942492342"))).to.be.false;
+        });
+      });
+      describe("Symbol", function () {
+        it("should be false", function () {
+          expect(isNull(Symbol("foo"))).to.be.false;
         });
       });
     });

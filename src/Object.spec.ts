@@ -63,6 +63,13 @@ describe("Object", function () {
           ).to.throw(ObjectAssertionError);
         });
       });
+      describe("Symbol", function () {
+        it("should throw ObjectAssertionError", function () {
+          expect(() => assertIsObject(Symbol("foo"))).to.throw(
+            ObjectAssertionError
+          );
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -117,6 +124,11 @@ describe("Object", function () {
       describe("BigInt", function () {
         it("should be false", function () {
           expect(isObject(BigInt("23874923749237942739782"))).to.be.false;
+        });
+      });
+      describe("Symbol", function () {
+        it("should be false", function () {
+          expect(isObject(Symbol("foo"))).to.be.false;
         });
       });
     });

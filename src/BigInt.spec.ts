@@ -49,6 +49,13 @@ describe("BigInt", function (): void {
           );
         });
       });
+      describe("Symbol", function (): void {
+        it("should throw BigIntAssertionError", function (): void {
+          expect(() => assertIsBigInt(Symbol("foo"))).to.throw(
+            BigIntAssertionError
+          );
+        });
+      });
     });
   });
   describe("Predicate", function () {
@@ -93,6 +100,11 @@ describe("BigInt", function (): void {
       describe("Undefined", function () {
         it("should be false", function () {
           expect(isBigInt(undefined)).to.be.false;
+        });
+      });
+      describe("Symbol", function () {
+        it("should be false", function () {
+          expect(isBigInt(Symbol("foo"))).to.be.false;
         });
       });
     });
