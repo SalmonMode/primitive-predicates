@@ -56,3 +56,36 @@ function printUppercase(myArg: any) {
   console.log(myArg.toUppercase()); // compiler doesn't complain
 }
 ```
+
+## `object` and `null`
+
+The `typeof` operator, as its name suggests, returns the name of the type of the value provided as a string. For
+example, `typeof "hello"` would return `"string"`. But there's [a long existing "bug" in JavaScript](https://www.oreilly.com/library/view/you-dont-know/9781491905159/ch01.html#:~:text=It%20would%20have,of%20web%20software.)
+that results in `typeof null` returning `"object"`. This manifests in TypeScript in many ways that can prove to be
+frustrating.
+
+TypeScript tries to help out by preventing us from passing `null` where things are explicitely typed as `object`, but
+things can get messy and confusing. In order to properly check that something is _actually_ an `object` (and not `null`)
+we have to do the following:
+
+```typescript
+const someVar: any = {};
+if (someVar !== null && typeof someVar === "object") {
+  // 'someVar' is still recognized as type 'any'
+  someVar.thing(); // Compiler doesn't complain
+}
+```
+
+The problem is that even after that check, the compiler will still see it as type `any`. This can be a real problem when
+trying to be very strict with the typing, since the compiler won't be making sure you can only reference properties it
+knows are there.
+
+Luckily, this package provides that with convenience functions:
+
+```typescript
+const someVar: any = {};
+if (isObject(someVar)) {
+  // 'someVar' is now recognized as type 'object'
+  someVar.thing(); // Compiler complains
+}
+```
