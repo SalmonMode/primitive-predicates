@@ -66,3 +66,14 @@ export class BooleanAssertionError extends AssertionError {
     this.name = new.target.name;
   }
 }
+/**
+ * Thrown when a value is found to not be null.
+ */
+export class NullAssertionError extends AssertionError {
+  constructor(message?: string) {
+    super(message);
+
+    Object.setPrototypeOf(this, NullAssertionError.prototype);
+    this.name = new.target.name;
+  }
+}
