@@ -55,3 +55,14 @@ export class NumberAssertionError extends AssertionError {
     this.name = new.target.name;
   }
 }
+/**
+ * Thrown when a value is found to not be a boolean.
+ */
+export class BooleanAssertionError extends AssertionError {
+  constructor(message?: string) {
+    super(message);
+
+    Object.setPrototypeOf(this, BooleanAssertionError.prototype);
+    this.name = new.target.name;
+  }
+}
