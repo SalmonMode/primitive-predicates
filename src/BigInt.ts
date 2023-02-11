@@ -9,7 +9,7 @@ import { BigIntAssertionError } from "./Errors";
  */
 export function assertIsBigInt(value: unknown): asserts value is BigInt {
   if (typeof value !== "bigint") {
-    throw new BigIntAssertionError("Value is not BigInt");
+    throw new BigIntAssertionError("Value is not a BigInt");
   }
 }
 /**

@@ -1,6 +1,6 @@
 {
   "name": "primitive-predicates",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "A simple TypeScript library providing type guards for the primitive types in JavaScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
