@@ -8,8 +8,10 @@ export {
   NumberAssertionError,
   ObjectAssertionError,
   StringAssertionError,
+  UndefinedAssertionError,
 } from "./Errors";
 export { assertIsNull, isNull } from "./Null";
 export { assertIsNumber, isNumber } from "./Number";
 export { assertIsObject, isObject } from "./Object";
 export { assertIsString, isString } from "./String";
+export { assertIsUndefined, isUndefined } from "./Undefined";

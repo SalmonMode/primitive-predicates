@@ -77,3 +77,14 @@ export class NullAssertionError extends AssertionError {
     this.name = new.target.name;
   }
 }
+/**
+ * Thrown when a value is found to not be undefined.
+ */
+export class UndefinedAssertionError extends AssertionError {
+  constructor(message?: string) {
+    super(message);
+
+    Object.setPrototypeOf(this, UndefinedAssertionError.prototype);
+    this.name = new.target.name;
+  }
+}

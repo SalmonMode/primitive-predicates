@@ -38,6 +38,8 @@ npm install primitive-predicates
 - `isBoolean`
 - `assertIsNull`
 - `isNull`
+- `assertIsUndefined`
+- `isUndefined`
 
 ## Basic usage
 
@@ -74,6 +76,7 @@ These are the available error types, grouped according to their inheritance:
   - `NumberAssertionError`
   - `BooleanAssertionError`
   - `NullAssertionError`
+  - `UndefinedAssertionError`
 
 ### Predicates
 
