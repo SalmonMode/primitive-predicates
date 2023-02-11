@@ -1,5 +1,7 @@
 # primitive-predicates
 
+[![codecov](https://codecov.io/gh/SalmonMode/primitive-predicates/branch/main/graph/badge.svg?token=E28MMT0TC6)](https://codecov.io/gh/SalmonMode/primitive-predicates)
+
 A simple TypeScript library providing type guards for the primitive types in JavaScript.
 
 ## What is it?
