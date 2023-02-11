@@ -5,8 +5,10 @@ import { assertIsString, isString } from "./String";
 describe("String", function (): void {
   describe("Assertion", function (): void {
     describe("Valid Values", function (): void {
-      it("should not throw error", function (): void {
-        expect(assertIsString("")).to.be.undefined;
+      describe("String", function (): void {
+        it("should not throw error", function (): void {
+          expect(assertIsString("")).to.be.undefined;
+        });
       });
     });
     describe("Invalid Values", function (): void {
@@ -46,8 +48,10 @@ describe("String", function (): void {
   });
   describe("Predicate", function () {
     describe("Valid Values", function () {
-      it("should be true", function () {
-        expect(isString("")).to.be.true;
+      describe("String", function () {
+        it("should be true", function () {
+          expect(isString("")).to.be.true;
+        });
       });
     });
     describe("Invalid Values", function () {
