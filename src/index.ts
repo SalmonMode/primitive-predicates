@@ -1,6 +1,7 @@
 export {
   AssertionError,
   ObjectAssertionError,
+  ArrayAssertionError,
   StringAssertionError,
 } from "./Errors";
 export { assertIsObject, isObject } from "./Object";
