@@ -1,0 +1,48 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Node.js Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:ci
+      - name: Code Coverage Summary
+        # You may pin to the exact commit or the version.
+        # uses: irongut/CodeCoverageSummary@51cc3a756ddcd398d447c044c02cb6aa83fdae95
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          # A comma separated list of code coverage files to analyse. Also supports using glob patterns to match multiple files.
+          filename: coverage/cobertura-coverage.xml
+          # Include a Line Rate coverage badge in the output using shields.io - true / false (default).
+          badge: true
+          # Fail if overall Line Rate below lower threshold - true / false (default).
+          fail_below_min: 100
+          # Output Format - markdown or text (default).
+          format: markdown
+          # Hide Branch Rate values in the output - true / false (default).
+          hide_branch_rate: false
+          # Hide Complexity values in the output - true / false (default).
+          hide_complexity: false
+          # Include health indicators in the output - true (default) / false.
+          indicators: true
+          # Output Type - console (default), file or both.
+          output: both
+          # Threshold percentages for badge and health indicators, lower threshold can also be used to fail the action.
+          thresholds: "100 100"
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+      - name: Write to Job Summary
+        run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
