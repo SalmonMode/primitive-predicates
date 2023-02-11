@@ -6,7 +6,7 @@ var expect = chai.expect;
 
 describe("Array", function () {
   describe("Assertion", function () {
-    describe("Valid Value", function () {
+    describe("Valid Values", function () {
       describe("Empty Array", function () {
         it("should not throw error", function () {
           expect(assertIsArray([])).to.be.undefined;
@@ -18,7 +18,7 @@ describe("Array", function () {
         });
       });
     });
-    describe("Invalid Array", function () {
+    describe("Invalid Values", function () {
       describe("Object", function () {
         it("should throw ArrayAssertionError", function () {
           expect(() => assertIsArray({})).to.throw(ArrayAssertionError);
@@ -57,7 +57,7 @@ describe("Array", function () {
     });
   });
   describe("Predicate", function () {
-    describe("Valid Value", function () {
+    describe("Valid Values", function () {
       describe("Empty Array", function () {
         it("should be true", function () {
           expect(isArray([])).to.be.true;
@@ -69,7 +69,7 @@ describe("Array", function () {
         });
       });
     });
-    describe("Invalid Value", function () {
+    describe("Invalid Values", function () {
       describe("Object", function () {
         it("should be false", function () {
           expect(isArray({})).to.be.false;

@@ -26,12 +26,14 @@ npm install primitive-predicates
 
 ## Available functions
 
-- `assertIsString`
-- `isString`
 - `assertIsObject`
 - `isObject`
 - `assertIsArray`
 - `isArray`
+- `assertIsString`
+- `isString`
+- `assertIsNumber`
+- `isNumber`
 
 ## How to import
 
@@ -56,9 +58,10 @@ import { StringAssertionError } from "primitive-predicates";
 These are the available error types, grouped according to their inheritance:
 
 - `AssertionError`
-  - `StringAssertionError`
   - `ObjectAssertionError`
     - `ArrayAssertionError`
+  - `StringAssertionError`
+  - `NumberAssertionError`
 
 ### Predicates
 

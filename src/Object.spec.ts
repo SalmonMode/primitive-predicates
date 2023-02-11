@@ -6,7 +6,7 @@ var expect = chai.expect;
 
 describe("Object", function () {
   describe("Assertion", function () {
-    describe("Valid Value", function () {
+    describe("Valid Values", function () {
       describe("Empty Object", function () {
         it("should not throw error", function () {
           expect(assertIsObject({})).to.be.undefined;
@@ -23,7 +23,7 @@ describe("Object", function () {
         });
       });
     });
-    describe("Invalid Value", function () {
+    describe("Invalid Values", function () {
       describe("String", function () {
         it("should throw ObjectAssertionError", function () {
           expect(() => assertIsObject("Hello")).to.throw(ObjectAssertionError);
@@ -59,7 +59,7 @@ describe("Object", function () {
     });
   });
   describe("Predicate", function () {
-    describe("Valid Value", function () {
+    describe("Valid Values", function () {
       describe("Empty Object", function () {
         it("should be true", function () {
           expect(isObject({})).to.be.true;
@@ -76,7 +76,7 @@ describe("Object", function () {
         });
       });
     });
-    describe("Invalid Value", function () {
+    describe("Invalid Values", function () {
       describe("String", function () {
         it("should be false", function () {
           expect(isObject("Hello")).to.be.false;

@@ -10,17 +10,6 @@ export class AssertionError extends TypeError {
   }
 }
 /**
- * Thrown when a value is found to not be a string.
- */
-export class StringAssertionError extends AssertionError {
-  constructor(message?: string) {
-    super(message);
-
-    Object.setPrototypeOf(this, StringAssertionError.prototype);
-    this.name = new.target.name;
-  }
-}
-/**
  * Thrown when a value is found to not be an object.
  */
 export class ObjectAssertionError extends AssertionError {
@@ -41,6 +30,28 @@ export class ArrayAssertionError extends ObjectAssertionError {
     super(message);
 
     Object.setPrototypeOf(this, ArrayAssertionError.prototype);
+    this.name = new.target.name;
+  }
+}
+/**
+ * Thrown when a value is found to not be a string.
+ */
+export class StringAssertionError extends AssertionError {
+  constructor(message?: string) {
+    super(message);
+
+    Object.setPrototypeOf(this, StringAssertionError.prototype);
+    this.name = new.target.name;
+  }
+}
+/**
+ * Thrown when a value is found to not be a number.
+ */
+export class NumberAssertionError extends AssertionError {
+  constructor(message?: string) {
+    super(message);
+
+    Object.setPrototypeOf(this, NumberAssertionError.prototype);
     this.name = new.target.name;
   }
 }

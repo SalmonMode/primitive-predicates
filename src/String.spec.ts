@@ -4,7 +4,7 @@ import { assertIsString, isString } from "./String";
 
 describe("String", function (): void {
   describe("Assertion", function (): void {
-    describe("Valid String", function (): void {
+    describe("Valid Values", function (): void {
       it("should not throw error", function (): void {
         expect(assertIsString("")).to.be.undefined;
       });
@@ -45,7 +45,7 @@ describe("String", function (): void {
     });
   });
   describe("Predicate", function () {
-    describe("Valid String", function () {
+    describe("Valid Values", function () {
       it("should be true", function () {
         expect(isString("")).to.be.true;
       });
