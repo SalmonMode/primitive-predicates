@@ -1,0 +1,86 @@
+{
+  "name": "primitive-predicates",
+  "version": "0.0.1",
+  "description": "A simple TypeScript library providing type guards for the primitive types in JavaScript.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "nyc mocha --recursive ./src",
+    "test:ci": "nyc mocha --recursive ./src --reporter mocha-junit-reporter"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".js",
+      ".jsx",
+      ".tsx"
+    ],
+    "include": [
+      "**/*.{js,jsx,ts,tsx}"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "**/*.spec.ts",
+      "coverage"
+    ],
+    "reporter": [
+      "text",
+      "html",
+      "cobertura"
+    ],
+    "all": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SalmonMode/primitive-predicates"
+  },
+  "author": "Chris NeJame",
+  "license": "MIT",
+  "keywords": [
+    "type",
+    "types",
+    "type-check",
+    "type-checks",
+    "type-checking",
+    "predicate",
+    "predicates",
+    "type-predicate",
+    "type-predicates",
+    "type-assert",
+    "type-asserting",
+    "type-assertion",
+    "type-assertions",
+    "type-guard",
+    "type-guards",
+    "type-guarding",
+    "type-safe",
+    "type-safety",
+    "values",
+    "data",
+    "contract",
+    "assert",
+    "check",
+    "verify",
+    "verification",
+    "safe",
+    "safety"
+  ],
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.9",
+    "@types/sinon": "^10.0.13",
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^10.1.0",
+    "mocha-junit-reporter": "^2.2.0",
+    "nock": "^13.2.9",
+    "nyc": "^15.1.0",
+    "sinon": "^14.0.2",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3"
+  }
+}
