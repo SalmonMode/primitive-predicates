@@ -1,7 +1,7 @@
 import { ObjectAssertionError } from "./Errors";
 
 /**
- * Type assertion function to check if a value is of type object or not.
+ * Assert the value is an object.
  *
  * Warning: Arrays are also of type object.
  *
@@ -29,7 +29,7 @@ export function assertIsObject(value: unknown): asserts value is object {
 }
 
 /**
- * Type predicate function to check if a value is of type object or not.
+ * Check if the value is an object or not.
  *
  * Warning: Arrays are also of type object.
  *
@@ -46,7 +46,7 @@ export function assertIsObject(value: unknown): asserts value is object {
  * coming back, but `null` is perfectly valid and parsable JSON on its own, and the server may be
  * intended to provide exactly that.
  *
- * @param value true, if value is of type object, false, if it is not
+ * @param value true, if value is an object, false, if it is not
  */
 export function isObject(value: unknown): value is object {
   return typeof value === "object" && value !== null;
