@@ -16,3 +16,4 @@ export { assertIsNumber, isNumber } from "./Number";
 export { assertIsObject, isObject } from "./Object";
 export { assertIsString, isString } from "./String";
 export { assertIsUndefined, isUndefined } from "./Undefined";
+export { assertIsBigInt, isBigInt } from "./BigInt";
