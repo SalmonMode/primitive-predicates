@@ -10,12 +10,14 @@ export {
   NumberAssertionError,
   ObjectAssertionError,
   StringAssertionError,
-  UndefinedAssertionError,
   SymbolAssertionError,
+  UndefinedAssertionError,
+  PropertyAssertionError,
 } from "./Errors";
 export { assertIsNull, isNull } from "./Null";
 export { assertIsNumber, isNumber } from "./Number";
 export { assertIsObject, isObject } from "./Object";
+export { assertHasProperty, hasProperty } from "./Property";
 export { assertIsString, isString } from "./String";
 export { assertIsSymbol, isSymbol } from "./Symbol";
 export { assertIsUndefined, isUndefined } from "./Undefined";

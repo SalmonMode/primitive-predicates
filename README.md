@@ -44,6 +44,8 @@ npm install primitive-predicates
 - `isBigInt`
 - `assertIsSymbol`
 - `isSymbol`
+- `assertHasProperty`
+- `hasProperty`
 
 ## Basic usage
 
@@ -57,6 +59,21 @@ const [firstEntry, , , fourthEntry] = someCommaSeparatedString.split(",");
 assertIsString(firstEntry);
 assertIsString(fourthEntry);
 // Both are now recognized as strings (or would've thrown an error)
+```
+
+## Checking for properties
+
+Once an object is found to be of type object, TypeScript won't just allow access to properties it doesn't know are there
+or not. Luckily, this library also provides convenient functions for checking this, as well:
+
+```typescript
+const obj: object = {};
+
+assertHasProperty(obj, "thing");
+// Now recognizes obj as type: object & Record<"thing", unknown>
+assertIsString(obj.thing);
+// Now recognizes obj as having a 'thing' property of type 'string'
+console.log(obj.thing.toUppercase());
 ```
 
 ## Catching Assertion Errors
@@ -83,6 +100,7 @@ These are the available error types, grouped according to their inheritance:
   - `UndefinedAssertionError`
   - `BigIntAssertionError`
   - `SymbolAssertionError`
+  - `PropertyAssertionError`
 
 ### Predicates
 

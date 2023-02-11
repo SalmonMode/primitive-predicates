@@ -110,3 +110,14 @@ export class SymbolAssertionError extends AssertionError {
     this.name = new.target.name;
   }
 }
+/**
+ * Thrown when an object is found to not be a property.
+ */
+export class PropertyAssertionError extends AssertionError {
+  constructor(message?: string) {
+    super(message);
+
+    Object.setPrototypeOf(this, PropertyAssertionError.prototype);
+    this.name = new.target.name;
+  }
+}
