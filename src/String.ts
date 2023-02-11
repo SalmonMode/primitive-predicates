@@ -1,13 +1,15 @@
+import { StringAssertionError } from "./Errors";
+
 /**
  * Assert the value is a string.
  *
- * @throws {TypeError} if value is not a string
+ * @throws {StringAssertionError} if value is not a string
  *
  * @param value an unknown value
  */
 export function assertIsString(value: unknown): asserts value is string {
   if (typeof value !== "string") {
-    throw new TypeError("Value is not a string");
+    throw new StringAssertionError("Value is not a string");
   }
 }
 /**

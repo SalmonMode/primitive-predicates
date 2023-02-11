@@ -13,8 +13,49 @@ TypeScript will use [certain clues](https://www.typescriptlang.org/docs/handbook
 information down as much as it can before runtime. To help the compiler do this, TypeScript provides two features that
 this library uses to provide convenience functions:
 
-1. Type predicate functions
-2. Type assertion functions
+1. [Type predicate functions](#predicates)
+2. [Type assertion functions](#assertions)
+
+## How to install
+
+To install, just run:
+
+```bash
+npm install primitive-predicates
+```
+
+## Available functions
+
+- `assertIsString`
+- `isString`
+- `assertIsObject`
+- `isObject`
+
+## How to import
+
+Everything is available from the top level. Here's an example of how to import the functions:
+
+```typescript
+import { assertIsObject } from "primitive-predicates";
+```
+
+## Catching Assertion Errors
+
+Each type assertion function throw their own type of error. Each of those errors, however, extends `AssertionError`
+(defined and provided by this library), which itself extends `TypeError`. This should make it convenient for catching
+thrown errors as desired while also allowing them to be easily distinguished from other types of errors.
+
+To import the error classes to compare against during a `try`/`catch`, simply import them from the package like so:
+
+```typescript
+import { StringAssertionError } from "primitive-predicates";
+```
+
+These are the available error types, grouped according to their inheritance:
+
+- `AssertionError`
+  - `StringAssertionError`
+  - `ObjectAssertionError`
 
 ### Predicates
 

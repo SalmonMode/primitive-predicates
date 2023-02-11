@@ -1,4 +1,5 @@
 import * as chai from "chai";
+import { ObjectAssertionError } from "./Errors";
 import { isObject, assertIsObject } from "./Object";
 
 var expect = chai.expect;
@@ -24,33 +25,35 @@ describe("Object", function () {
     });
     describe("Invalid Object", function () {
       describe("String", function () {
-        it("should throw TypeError", function () {
-          expect(() => assertIsObject("Hello")).to.throw(TypeError);
+        it("should throw ObjectAssertionError", function () {
+          expect(() => assertIsObject("Hello")).to.throw(ObjectAssertionError);
         });
       });
       describe("Empty String", function () {
-        it("should throw TypeError", function () {
-          expect(() => assertIsObject("")).to.throw(TypeError);
+        it("should throw ObjectAssertionError", function () {
+          expect(() => assertIsObject("")).to.throw(ObjectAssertionError);
         });
       });
       describe("Number", function () {
-        it("should throw TypeError", function () {
-          expect(() => assertIsObject(3)).to.throw(TypeError);
+        it("should throw ObjectAssertionError", function () {
+          expect(() => assertIsObject(3)).to.throw(ObjectAssertionError);
         });
       });
       describe("Null", function () {
-        it("should throw TypeError", function () {
-          expect(() => assertIsObject(null)).to.throw(TypeError);
+        it("should throw ObjectAssertionError", function () {
+          expect(() => assertIsObject(null)).to.throw(ObjectAssertionError);
         });
       });
       describe("Boolean", function () {
-        it("should throw TypeError", function () {
-          expect(() => assertIsObject(true)).to.throw(TypeError);
+        it("should throw ObjectAssertionError", function () {
+          expect(() => assertIsObject(true)).to.throw(ObjectAssertionError);
         });
       });
       describe("Undefined", function () {
-        it("should throw TypeError", function () {
-          expect(() => assertIsObject(undefined)).to.throw(TypeError);
+        it("should throw ObjectAssertionError", function () {
+          expect(() => assertIsObject(undefined)).to.throw(
+            ObjectAssertionError
+          );
         });
       });
     });
