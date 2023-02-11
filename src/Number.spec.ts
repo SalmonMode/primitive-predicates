@@ -27,27 +27,27 @@ describe("Number", function (): void {
           expect(() => assertIsNumber({})).to.throw(NumberAssertionError);
         });
       });
-      describe("Object is string", function (): void {
+      describe("String", function (): void {
         it("should throw NumberAssertionError", function (): void {
           expect(() => assertIsNumber("0")).to.throw(NumberAssertionError);
         });
       });
-      describe("Object is null", function (): void {
+      describe("Null", function (): void {
         it("should throw NumberAssertionError", function (): void {
           expect(() => assertIsNumber(null)).to.throw(NumberAssertionError);
         });
       });
-      describe("Object is boolean", function (): void {
+      describe("Boolean", function (): void {
         it("should throw NumberAssertionError", function (): void {
           expect(() => assertIsNumber(true)).to.throw(NumberAssertionError);
         });
       });
-      describe("Object is array", function (): void {
+      describe("Array", function (): void {
         it("should throw NumberAssertionError", function (): void {
           expect(() => assertIsNumber([])).to.throw(NumberAssertionError);
         });
       });
-      describe("Object is undefined", function (): void {
+      describe("Undefined", function (): void {
         it("should throw NumberAssertionError", function (): void {
           expect(() => assertIsNumber(undefined)).to.throw(
             NumberAssertionError
@@ -80,27 +80,27 @@ describe("Number", function (): void {
           expect(isNumber({})).to.be.false;
         });
       });
-      describe("Object is string", function () {
+      describe("String", function () {
         it("should be false", function () {
           expect(isNumber("3")).to.be.false;
         });
       });
-      describe("Object is null", function () {
+      describe("Null", function () {
         it("should be false", function () {
           expect(isNumber(null)).to.be.false;
         });
       });
-      describe("Object is boolean", function () {
+      describe("Boolean", function () {
         it("should be false", function () {
           expect(isNumber(true)).to.be.false;
         });
       });
-      describe("Object is array", function () {
+      describe("Array", function () {
         it("should be false", function () {
           expect(isNumber([])).to.be.false;
         });
       });
-      describe("Object is undefined", function () {
+      describe("Undefined", function () {
         it("should be false", function () {
           expect(isNumber(undefined)).to.be.false;
         });
