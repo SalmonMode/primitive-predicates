@@ -1,6 +1,9 @@
 # primitive-predicates
 
 [![codecov](https://codecov.io/gh/SalmonMode/primitive-predicates/branch/main/graph/badge.svg?token=E28MMT0TC6)](https://codecov.io/gh/SalmonMode/primitive-predicates)
+[![Build](https://github.com/SalmonMode/primitive-predicates/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/SalmonMode/primitive-predicates/actions/workflows/npm-publish.yml)
+[![Package status](https://img.shields.io/npm/v/primitive-predicates.svg)](https://www.npmjs.com/package/primitive-predicates)
+[![License](https://img.shields.io/npm/l/primitive-predicates.svg)](https://opensource.org/licenses/MIT)
 
 A simple TypeScript library providing type guards for the primitive types in JavaScript.
 
