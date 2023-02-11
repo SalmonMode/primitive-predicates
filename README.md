@@ -37,12 +37,18 @@ npm install primitive-predicates
 - `assertIsBoolean`
 - `isBoolean`
 
-## How to import
+## Basic usage
 
 Everything is available from the top level. Here's an example of how to import the functions:
 
 ```typescript
-import { assertIsObject } from "primitive-predicates";
+import { assertIsString } from "primitive-predicates";
+
+const [firstEntry, , , fourthEntry] = someCommaSeparatedString.split(",");
+// Both could either be a string, or undefined
+assertIsString(firstEntry);
+assertIsString(fourthEntry);
+// Both are now recognized as strings (or would've thrown an error)
 ```
 
 ## Catching Assertion Errors
