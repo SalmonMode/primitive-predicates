@@ -36,6 +36,8 @@ npm install primitive-predicates
 - `isNumber`
 - `assertIsBoolean`
 - `isBoolean`
+- `assertIsNull`
+- `isNull`
 
 ## Basic usage
 
@@ -71,6 +73,7 @@ These are the available error types, grouped according to their inheritance:
   - `StringAssertionError`
   - `NumberAssertionError`
   - `BooleanAssertionError`
+  - `NullAssertionError`
 
 ### Predicates
 
