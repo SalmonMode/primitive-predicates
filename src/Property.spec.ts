@@ -1,8 +1,6 @@
-import * as chai from "chai";
+import { expect } from "chai";
 import { PropertyAssertionError } from "./Errors";
 import { assertHasProperty, hasProperty } from "./Property";
-
-var expect = chai.expect;
 
 describe("Property", function () {
   describe("Assertion", function () {

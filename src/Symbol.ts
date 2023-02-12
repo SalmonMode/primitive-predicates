@@ -7,7 +7,7 @@ import { SymbolAssertionError } from "./Errors";
  *
  * @param value an unknown value
  */
-export function assertIsSymbol(value: unknown): asserts value is Symbol {
+export function assertIsSymbol(value: unknown): asserts value is symbol {
   if (typeof value !== "symbol") {
     throw new SymbolAssertionError("Value is not a Symbol");
   }
@@ -18,6 +18,6 @@ export function assertIsSymbol(value: unknown): asserts value is Symbol {
  * @param value an unknown value
  * @returns true, if value is a Symbol, false, if it is not
  */
-export function isSymbol(value: unknown): value is Symbol {
+export function isSymbol(value: unknown): value is symbol {
   return typeof value === "symbol";
 }
