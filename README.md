@@ -175,3 +175,8 @@ if (isObject(someVar)) {
   someVar.thing(); // Compiler complains
 }
 ```
+
+Note: Checking the type directly _can_ work to determine whether or not the value is actually an `object` _if_ the
+original type is `unknown`, because `unknown` is inherently more restrictive than `any`. The functions provided by this
+library still simplify the logic a bit and reduce the need for checking certain edge cases ("We test it so you don't
+have to!").
