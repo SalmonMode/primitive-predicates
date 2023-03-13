@@ -1,4 +1,4 @@
-import { SymbolAssertionError } from "./Errors";
+import { SymbolAssertionError } from "./Errors.js";
 
 /**
  * Assert the value is a Symbol.

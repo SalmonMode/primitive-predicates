@@ -1,4 +1,4 @@
-import { StringAssertionError } from "./Errors";
+import { StringAssertionError } from "./Errors.js";
 
 /**
  * Assert the value is a string.

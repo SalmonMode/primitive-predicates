@@ -1,6 +1,6 @@
-export { assertIsArray, isArray } from "./Array";
-export { assertIsBigInt, isBigInt } from "./BigInt";
-export { assertIsBoolean, isBoolean } from "./Boolean";
+export { assertIsArray, isArray } from "./Array.js";
+export { assertIsBigInt, isBigInt } from "./BigInt.js";
+export { assertIsBoolean, isBoolean } from "./Boolean.js";
 export {
   ArrayAssertionError,
   AssertionError,
@@ -13,11 +13,11 @@ export {
   SymbolAssertionError,
   UndefinedAssertionError,
   PropertyAssertionError,
-} from "./Errors";
-export { assertIsNull, isNull } from "./Null";
-export { assertIsNumber, isNumber } from "./Number";
-export { assertIsObject, isObject } from "./Object";
-export { assertHasProperty, hasProperty } from "./Property";
-export { assertIsString, isString } from "./String";
-export { assertIsSymbol, isSymbol } from "./Symbol";
-export { assertIsUndefined, isUndefined } from "./Undefined";
+} from "./Errors.js";
+export { assertIsNull, isNull } from "./Null.js";
+export { assertIsNumber, isNumber } from "./Number.js";
+export { assertIsObject, isObject } from "./Object.js";
+export { assertHasProperty, hasProperty } from "./Property.js";
+export { assertIsString, isString } from "./String.js";
+export { assertIsSymbol, isSymbol } from "./Symbol.js";
+export { assertIsUndefined, isUndefined } from "./Undefined.js";

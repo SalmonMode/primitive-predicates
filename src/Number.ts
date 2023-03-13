@@ -1,4 +1,4 @@
-import { NumberAssertionError } from "./Errors";
+import { NumberAssertionError } from "./Errors.js";
 
 /**
  * Assert the value is a number.

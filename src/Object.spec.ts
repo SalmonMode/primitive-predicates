@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { ObjectAssertionError } from "./Errors";
-import { isObject, assertIsObject } from "./Object";
+import { ObjectAssertionError } from "./Errors.js";
+import { isObject, assertIsObject } from "./Object.js";
 
 describe("Object", function () {
   describe("Assertion", function () {

@@ -1,4 +1,4 @@
-import { BigIntAssertionError } from "./Errors";
+import { BigIntAssertionError } from "./Errors.js";
 
 /**
  * Assert the value is a BigInt.

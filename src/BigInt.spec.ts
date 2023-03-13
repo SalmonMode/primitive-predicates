@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { BigIntAssertionError } from "./Errors";
-import { assertIsBigInt, isBigInt } from "./BigInt";
+import { BigIntAssertionError } from "./Errors.js";
+import { assertIsBigInt, isBigInt } from "./BigInt.js";
 
 describe("BigInt", function (): void {
   describe("Assertion", function (): void {

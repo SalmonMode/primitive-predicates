@@ -1,4 +1,4 @@
-import { PropertyAssertionError } from "./Errors";
+import { PropertyAssertionError } from "./Errors.js";
 
 /**
  * Assert the object has the provided property name.

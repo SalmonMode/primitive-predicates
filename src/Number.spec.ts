@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { NumberAssertionError } from "./Errors";
-import { assertIsNumber, isNumber } from "./Number";
+import { NumberAssertionError } from "./Errors.js";
+import { assertIsNumber, isNumber } from "./Number.js";
 
 describe("Number", function (): void {
   describe("Assertion", function (): void {

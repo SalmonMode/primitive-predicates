@@ -1,4 +1,4 @@
-import { BooleanAssertionError } from "./Errors";
+import { BooleanAssertionError } from "./Errors.js";
 
 /**
  * Assert the value is a boolean.

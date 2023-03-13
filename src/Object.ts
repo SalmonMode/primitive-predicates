@@ -1,4 +1,4 @@
-import { ObjectAssertionError } from "./Errors";
+import { ObjectAssertionError } from "./Errors.js";
 
 /**
  * Assert the value is an object.

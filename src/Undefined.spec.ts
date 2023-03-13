@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { UndefinedAssertionError } from "./Errors";
-import { assertIsUndefined, isUndefined } from "./Undefined";
+import { UndefinedAssertionError } from "./Errors.js";
+import { assertIsUndefined, isUndefined } from "./Undefined.js";
 
 describe("Undefined", function (): void {
   describe("Assertion", function (): void {

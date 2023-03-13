@@ -1,4 +1,4 @@
-import { ArrayAssertionError } from "./Errors";
+import { ArrayAssertionError } from "./Errors.js";
 
 /**
  * Assert the value is an array.

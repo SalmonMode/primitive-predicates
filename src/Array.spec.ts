@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { ArrayAssertionError } from "./Errors";
-import { isArray, assertIsArray } from "./Array";
+import { ArrayAssertionError } from "./Errors.js";
+import { isArray, assertIsArray } from "./Array.js";
 
 describe("Array", function () {
   describe("Assertion", function () {

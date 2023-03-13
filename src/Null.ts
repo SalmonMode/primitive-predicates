@@ -1,4 +1,4 @@
-import { NullAssertionError } from "./Errors";
+import { NullAssertionError } from "./Errors.js";
 
 /**
  * Assert the value is null.

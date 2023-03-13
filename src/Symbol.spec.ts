@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { SymbolAssertionError } from "./Errors";
-import { assertIsSymbol, isSymbol } from "./Symbol";
+import { SymbolAssertionError } from "./Errors.js";
+import { assertIsSymbol, isSymbol } from "./Symbol.js";
 
 describe("Symbol", function (): void {
   describe("Assertion", function (): void {

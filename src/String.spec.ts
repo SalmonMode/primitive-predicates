@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { StringAssertionError } from "./Errors";
-import { assertIsString, isString } from "./String";
+import { StringAssertionError } from "./Errors.js";
+import { assertIsString, isString } from "./String.js";
 
 describe("String", function (): void {
   describe("Assertion", function (): void {

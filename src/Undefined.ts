@@ -1,4 +1,4 @@
-import { UndefinedAssertionError } from "./Errors";
+import { UndefinedAssertionError } from "./Errors.js";
 
 /**
  * Assert the value is undefined.

@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { BooleanAssertionError } from "./Errors";
-import { assertIsBoolean, isBoolean } from "./Boolean";
+import { BooleanAssertionError } from "./Errors.js";
+import { assertIsBoolean, isBoolean } from "./Boolean.js";
 
 describe("Boolean", function (): void {
   describe("Assertion", function (): void {

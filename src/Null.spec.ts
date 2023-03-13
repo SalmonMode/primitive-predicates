@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { NullAssertionError } from "./Errors";
-import { assertIsNull, isNull } from "./Null";
+import { NullAssertionError } from "./Errors.js";
+import { assertIsNull, isNull } from "./Null.js";
 
 describe("Null", function (): void {
   describe("Assertion", function (): void {

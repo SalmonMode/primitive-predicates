@@ -1,17 +1,72 @@
 {
   "name": "primitive-predicates",
-  "version": "1.1.3",
+  "version": "2.0.0",
   "description": "A simple TypeScript library providing type guards for the primitive types in JavaScript.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esmodule/index.js",
+  "type": "module",
+  "types": "dist/esmodule/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/commonjs/index.js",
+      "import": "./dist/esmodule/index.js"
+    },
+    "./array": {
+      "require": "./dist/commonjs/Array.js",
+      "import": "./dist/esmodule/Array.js"
+    },
+    "./BigInt": {
+      "require": "./dist/commonjs/BigInt.js",
+      "import": "./dist/esmodule/BigInt.js"
+    },
+    "./Boolean": {
+      "require": "./dist/commonjs/Boolean.js",
+      "import": "./dist/esmodule/Boolean.js"
+    },
+    "./Error": {
+      "require": "./dist/commonjs/Error.js",
+      "import": "./dist/esmodule/Error.js"
+    },
+    "./Null": {
+      "require": "./dist/commonjs/Null.js",
+      "import": "./dist/esmodule/Null.js"
+    },
+    "./Number": {
+      "require": "./dist/commonjs/Number.js",
+      "import": "./dist/esmodule/Number.js"
+    },
+    "./Object": {
+      "require": "./dist/commonjs/Object.js",
+      "import": "./dist/esmodule/Object.js"
+    },
+    "./Property": {
+      "require": "./dist/commonjs/Property.js",
+      "import": "./dist/esmodule/Property.js"
+    },
+    "./String": {
+      "require": "./dist/commonjs/String.js",
+      "import": "./dist/esmodule/String.js"
+    },
+    "./Symbol": {
+      "require": "./dist/commonjs/Symbol.js",
+      "import": "./dist/esmodule/Symbol.js"
+    },
+    "./Undefined": {
+      "require": "./dist/commonjs/Undefined.js",
+      "import": "./dist/esmodule/Undefined.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "npx tsc",
-    "test": "nyc mocha --recursive ./src",
-    "test:ci": "nyc mocha --recursive ./src --reporter mocha-junit-reporter",
+    "build": "rm -fr dist/* && npx tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && ./fixup.sh",
+    "test": "c8 mocha --recursive ./dist/",
+    "test:ci": "c8 mocha --recursive ./dist/ --reporter mocha-junit-reporter",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix"
   },
-  "nyc": {
+  "c8": {
     "extension": [
       ".ts",
       ".js",
@@ -75,6 +130,7 @@
     "@types/sinon": "^10.0.13",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
+    "c8": "^7.13.0",
     "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
     "eslint": "^8.34.0",
