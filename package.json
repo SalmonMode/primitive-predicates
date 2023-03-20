@@ -1,6 +1,6 @@
 {
   "name": "primitive-predicates",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "A simple TypeScript library providing type guards for the primitive types in JavaScript.",
   "main": "dist/commonjs/index.js",
   "module": "dist/esmodule/index.js",
@@ -61,6 +61,8 @@
   ],
   "scripts": {
     "build": "rm -fr dist/* && npx tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && ./fixup.sh",
+    "build:diagnostic": "npx tsc -b --extendedDiagnostics --generateTrace tracing_output_folder",
+    "analyze": "npx analyze-trace --expandTypes true tracing_output_folder",
     "test": "c8 mocha --recursive ./dist/",
     "test:ci": "c8 mocha --recursive ./dist/ --reporter mocha-junit-reporter",
     "lint": "npx eslint .",
@@ -130,6 +132,7 @@
     "@types/sinon": "^10.0.13",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
+    "@typescript/analyze-trace": "^0.10.0",
     "c8": "^7.13.0",
     "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
