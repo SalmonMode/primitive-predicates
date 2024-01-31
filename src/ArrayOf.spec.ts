@@ -205,7 +205,7 @@ describe("Array Of", function () {
         it("should not throw ArrayMemberAssertionError", function () {
           expect(() =>
             assertIsArrayOf(BigInt("34237849237488234"), isString)
-          ).to.throw(ArrayMemberAssertionError);
+          ).to.not.throw(ArrayMemberAssertionError);
         });
       });
       describe("BigInt and Type Assertion", function () {
@@ -217,7 +217,7 @@ describe("Array Of", function () {
         it("should not throw ArrayMemberAssertionError", function () {
           expect(() =>
             assertIsArrayOf(BigInt("34237849237488234"), assertIsString)
-          ).to.throw(ArrayMemberAssertionError);
+          ).to.not.throw(ArrayMemberAssertionError);
         });
       });
       describe("Symbol and Type Predicate", function () {
@@ -227,7 +227,7 @@ describe("Array Of", function () {
           );
         });
         it("should not throw ArrayMemberAssertionError", function () {
-          expect(() => assertIsArrayOf(Symbol("foo"), isString)).to.throw(
+          expect(() => assertIsArrayOf(Symbol("foo"), isString)).to.not.throw(
             ArrayMemberAssertionError
           );
         });
@@ -239,7 +239,7 @@ describe("Array Of", function () {
           );
         });
         it("should not throw ArrayMemberAssertionError", function () {
-          expect(() => assertIsArrayOf(Symbol("foo"), assertIsString)).to.throw(
+          expect(() => assertIsArrayOf(Symbol("foo"), assertIsString)).to.not.throw(
             ArrayMemberAssertionError
           );
         });

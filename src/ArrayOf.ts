@@ -32,10 +32,13 @@ export function assertIsArrayOf<T>(
   if (!Array.isArray(value)) {
     throw new ArrayAssertionError("Value is not an array");
   }
-  if (!value.every(memberPredicateOrAssertion)) {
-    throw new ArrayMemberAssertionError(
-      "Value is not an array of the expected type"
-    );
+  console.log(value.every(memberPredicateOrAssertion));
+  for (const item of value) {
+    if (memberPredicateOrAssertion(item) === false) {
+      throw new ArrayMemberAssertionError(
+        "Value is not an array of the expected type"
+      );
+    }
   }
 }
 
