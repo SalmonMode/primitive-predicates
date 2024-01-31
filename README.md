@@ -30,6 +30,8 @@ npm install primitive-predicates
 - `isObject`
 - `assertIsArray`
 - `isArray`
+- `assertIsArrayOf`
+- `isArrayOf`
 - `assertIsString`
 - `isString`
 - `assertIsNumber`
@@ -93,6 +95,7 @@ These are the available error types, grouped according to their inheritance:
 - `AssertionError`
   - `ObjectAssertionError`
     - `ArrayAssertionError`
+      - - `ArrayMemberAssertionError`
   - `StringAssertionError`
   - `NumberAssertionError`
   - `BooleanAssertionError`
@@ -140,6 +143,60 @@ import { assertIsString } from "primitive-predicates";
 function printUppercase(myArg: any) {
   assertIsString(myArg);
   console.log(myArg.toUppercase()); // compiler doesn't complain
+}
+```
+
+## `isArrayOf` and `assertIsArrayOf`
+
+These are more advanced than the other predicates and assertions. These take a second argument to check against each
+member of the array. `isArrayOf` and `assertIsArrayOf` both accept a type predicate for this argument, but
+`assertIsArrayOf` can also accept a type assertion. If a type assertion is provided, `assertIsArrayOf` will make no
+attempt to stop any errors that assertion might throw. However, if the object passed is an array, and a type predicate
+was passed, but its members fail the type predicate check, it will throw an `ArrayMemberAssertionError` which extends
+the normal `ArrayAssertionError`.
+
+Here's some examples of how these are used:
+
+```typescript
+let stringArray: unknown = ["hello", "world"];
+if (isArrayOf(stringArray, isString)) {
+  // We're guaranteed that stringArray is an array of strings here
+}
+```
+
+```typescript
+try {
+  const obj: unknown = [123]
+  assertIsArrayOf<string>(obj, isString)
+} catch (err) {
+  if (err instanceof ArrayAssertionError) {
+    // the object is not an array at all.
+    // NOTE: In this example, this WILL NOT be the error thrown.
+  } else if (err instanceof ArrayMemberAssertionError) {
+    // the object is an array, but one or more of its members are not strings
+    // NOTE: In this example, this WILL be the error that will be thrown.
+  } else if (err instanceof StringAssertionError) {
+    // the object is an array, but one or more of its members are not strings
+    // NOTE: In this example, this WILL NOT be the error thrown.
+  }
+}
+```
+
+```typescript
+try {
+  const obj: unknown = [123]
+  assertIsArrayOf<string>(obj, assertIsString)
+} catch (err) {
+  if (err instanceof ArrayAssertionError) {
+    // the object is not an array at all.
+    // NOTE: In this example, this WILL NOT be the error thrown.
+  } else if (err instanceof ArrayMemberAssertionError) {
+    // the object is an array, but one or more of its members are not strings
+    // NOTE: In this example, this WILL NOT be the error thrown.
+  } else if (err instanceof StringAssertionError) {
+    // the object is an array, but one or more of its members are not strings
+    // NOTE: In this example, this is the error that WILL be thrown.
+  }
 }
 ```
 

@@ -34,6 +34,21 @@ export class ArrayAssertionError extends ObjectAssertionError {
   }
 }
 /**
+ * Thrown when a value inside an array is found to not be the desired type.
+ *
+ * This inherits from `ObjectAssertionError` because arrays are also objects. It also inherits from
+ * `ArrayAssertionError` because it also pertains to a value not being the type of array the user desired, and it makes
+ * error handling more straightforward.
+ */
+export class ArrayMemberAssertionError extends ArrayAssertionError {
+  constructor(message?: string) {
+    super(message);
+
+    Object.setPrototypeOf(this, ArrayMemberAssertionError.prototype);
+    this.name = new.target.name;
+  }
+}
+/**
  * Thrown when a value is found to not be a string.
  */
 export class StringAssertionError extends AssertionError {
