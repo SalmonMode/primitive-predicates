@@ -32,7 +32,6 @@ export function assertIsArrayOf<T>(
   if (!Array.isArray(value)) {
     throw new ArrayAssertionError("Value is not an array");
   }
-  console.log(value.every(memberPredicateOrAssertion));
   for (const item of value) {
     if (memberPredicateOrAssertion(item) === false) {
       throw new ArrayMemberAssertionError(
